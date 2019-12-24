@@ -7,7 +7,40 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--    TODO: use gulp to insert javascript files-->
     <title>Public Library</title>
   </head>
-  <body></body>
+  <body>
+    <h1>Public Library</h1>
+    <h2>An Example of a Minimal JavaScript Front-End App</h2>
+    <p>This app supports the following operations:</p>
+    <menu>
+      <li>
+        <a href="listbooks.html">
+          <button>List all books</button>
+        </a>
+      </li>
+      <li>
+        <a href="createBook.html">
+          <button>Add a new book</button>
+        </a>
+      </li>
+      <li>
+        <a href="updateBook.html">
+          <button>Update a book</button>
+        </a>
+      </li>
+      <li>
+        <a href="deleteBook.html">
+          <button>Delete a book</button>
+        </a>
+      </li>
+      <li>
+        <button onclick="Book.clearData()">Clear database</button>
+      </li>
+      <li>
+        <button onclick="Book.createTestData()">Create test data</button>
+      </li></menu
+    >
+  </body>
 </html>
