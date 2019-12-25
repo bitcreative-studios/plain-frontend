@@ -1,3 +1,6 @@
+import { randomInt, MAXIMUM_TEST_DATA } from "../utils"
+import sampleBooks from "../../sample-data/books"
+
 /**
  *
  * @param slots
@@ -83,7 +86,13 @@ Book.saveAll = function() {
 /**
  * Generate some example book records as test data
  */
-// TODO: Book.crateTestData
+Book.generateData = function(count = 10) {
+  const books = sampleBooks.slice(0, count)
+  books.forEach(book => {
+    Book.instances[book.isbn] = new Book(book)
+  })
+  Book.saveAll()
+}
 
 /**
  * Clear the book datastore
