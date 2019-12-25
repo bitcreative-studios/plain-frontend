@@ -94,7 +94,14 @@ Book.update = function(slots) {
 /**
  * Delete a Book instance
  */
-// TODO: Book.destroy
+Book.destroy = function(isbn) {
+  if (Book.instances[isbn]) {
+    console.log(`Book ${isbn} deleted!`)
+    delete Book.instances[isbn]
+  } else {
+    console.log(`There is no book with ISBN ${isbn} in the database`)
+  }
+}
 
 /**
  * Generate some example book records as test data
