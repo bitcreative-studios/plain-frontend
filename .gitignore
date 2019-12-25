@@ -4,4 +4,6 @@ node_modules
 # Webstorm Files
 .idea
 
+# Misc files/folders
 tutorial-source
+gulp-example
