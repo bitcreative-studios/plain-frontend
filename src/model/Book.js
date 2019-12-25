@@ -79,7 +79,17 @@ Book.add = function(slots) {
 /**
  * Update an existing Book instance
  */
-// TODO: Book.update
+Book.update = function(slots) {
+  const book = Book.instances[slots.isbn]
+  const year = parseInt(slots.year, 10)
+  if (book.title !== slots.title) {
+    book.title = slots.title
+  }
+  if (book.year !== year) {
+    book.year = year
+  }
+  cosole.log(`Book ${slots.isbn} updated!`)
+}
 
 /**
  * Delete a Book instance
