@@ -31,7 +31,6 @@ Book.convertRow2Obj = function(bookRow) {
  * Load all managed Book instances from the persistent data store
  */
 Book.loadAll = function() {
-  let key = ""
   let keys = []
   let booksString = ""
   let books = {}
@@ -45,12 +44,11 @@ Book.loadAll = function() {
   if (booksString) {
     books = JSON.parse(booksString)
     keys = Object.keys(books)
-    console.log(`${keys.length} books loaded.`)
-    for (let i = 0; i < keys.length; i++) {
-      key = keys[i]
+    keys.forEach(key => {
       Book.instances[key] = Book.convertRow2Obj(books[key])
-    }
+    })
   }
+  console.log(`${keys.length} books loaded.`)
 }
 
 /**
