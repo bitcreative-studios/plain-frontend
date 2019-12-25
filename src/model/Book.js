@@ -51,7 +51,19 @@ Book.loadAll = function() {
 /**
  * Save all managed Book instances to the persistent data store
  */
-// TODO: Book.saveAll
+Book.saveAll = function() {
+  let booksString = ""
+  let error = false
+  const NUMBER_OF_BOOKS = Object.keys(Book.instances).length
+  try {
+    booksString = JSON.stringify(Book.instances)
+    localStorage.books = booksString
+  } catch (e) {
+    alert(`Error while writing to Local Storage\n ${e}`)
+    error = true
+  }
+  if (!error) console.log(`${NUMBER_OF_BOOKS} books saved`)
+}
 
 /**
  * Crate a new Book instance
