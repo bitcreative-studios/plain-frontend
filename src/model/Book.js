@@ -23,7 +23,9 @@ Book.instances = {}
  * Convert a JS object representing a book record into
  * an instance of the Book class
  */
-// TODO: Book.convertRow2Obj
+Book.convertRow2Obj = function(bookRow) {
+  return new Book(bookRow)
+}
 
 /**
  * Load all managed Book instances from the persistent data store
