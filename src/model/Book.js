@@ -4,8 +4,8 @@
  *
  */
 
-import { randomInt, MAXIMUM_TEST_DATA } from "../utils"
-import sampleBooks from "../../sample-data/books.json"
+// import { randomInt, MAXIMUM_TEST_DATA } from "../utils"
+// import sampleBooks from "../../sample-data/books.json"
 
 /**
  * Constructor function for the class Book
@@ -117,8 +117,28 @@ Book.destroy = function(isbn) {
  * Generate some example book records as test data
  */
 Book.generateData = function(count = 10) {
-  const start = randomInt(0, MAXIMUM_TEST_DATA - count)
-  const books = sampleBooks.slice(start, count)
+  // const start = randomInt(0, MAXIMUM_TEST_DATA - count)
+  // const books = sampleBooks.slice(start, count)
+  const books = [
+    { isbn: "349889587-7", title: "Derailed", year: 1996 },
+    { isbn: "610729149-0", title: "Triumph of Love, The", year: 2000 },
+    { isbn: "924653314-3", title: "Mexican Hayride", year: 2005 },
+    { isbn: "504378996-4", title: "Time Machine, The", year: 1996 },
+    { isbn: "999350634-6", title: "Chato's Land", year: 1997 },
+    {
+      isbn: "900094993-9",
+      title: "Fearless Hyena, The (Xiao quan guai zhao)",
+      year: 2002,
+    },
+    {
+      isbn: "443965422-3",
+      title: "Emergency Escape, The (Wyjscie awaryjne)",
+      year: 2006,
+    },
+    { isbn: "186501202-5", title: "Take, The", year: 1994 },
+    { isbn: "588711695-1", title: "Hero Wanted", year: 1993 },
+    { isbn: "947002374-9", title: "Private Confessions", year: 1984 },
+  ]
   books.forEach(book => {
     Book.instances[book.isbn] = new Book(book)
   })
