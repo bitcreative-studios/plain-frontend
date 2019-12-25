@@ -11,14 +11,42 @@ function Book(slots) {
 
 /**
  * The collection of all Book instances managed by the application
- * in the form of a JSON 'table'
+ * in the form of a JSON 'table' (i.e., a map of records).
+ * Where an ISBN is a key for accessing the corresponding book record
  */
-// TODO: Book.instances
+Book.instances = {}
+
+/**
+ * Convert a JS object representing a book record into
+ * an instance of the Book class
+ */
+// TODO: Book.convertRow2Obj
 
 /**
  * Load all managed Book instances from the persistent data store
  */
-// TODO: Book.loadAll
+Book.loadAll = function() {
+  let key = ""
+  let keys = []
+  let booksString = ""
+  let books = {}
+  try {
+    if (localStorage.books) {
+      booksString = localStorage.books
+    }
+  } catch (e) {
+    alert(`Error when reading from Local Storage\n ${e}`)
+  }
+  if (booksString) {
+    books = JSON.parse(booksString)
+    keys = Object.keys(books)
+    console.log(`${keys.length} books loaded.`)
+    for (let i = 0; i < keys.length; i++) {
+      key = keys[i]
+      Book.instances[key] = Book.convertRow2Obj(books[key])
+    }
+  }
+}
 
 /**
  * Save all managed Book instances to the persistent data store
