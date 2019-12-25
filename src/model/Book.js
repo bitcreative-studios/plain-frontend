@@ -71,7 +71,10 @@ Book.saveAll = function() {
 /**
  * Crate a new Book instance
  */
-// TODO: Book.add
+Book.add = function(slots) {
+  Book.instances[slots.isbn] = new Book(slots)
+  console.log(`Book ${slots.isbn} created!`)
+}
 
 /**
  * Update an existing Book instance
