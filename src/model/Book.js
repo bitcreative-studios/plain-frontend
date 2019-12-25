@@ -1,5 +1,5 @@
 import { randomInt, MAXIMUM_TEST_DATA } from "../utils"
-import sampleBooks from "../../sample-data/books"
+import sampleBooks from "../../sample-data/books.json"
 
 /**
  *
