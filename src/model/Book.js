@@ -107,7 +107,8 @@ Book.destroy = function(isbn) {
  * Generate some example book records as test data
  */
 Book.generateData = function(count = 10) {
-  const books = sampleBooks.slice(0, count)
+  const start = randomInt(0, MAXIMUM_TEST_DATA - count)
+  const books = sampleBooks.slice(start, count)
   books.forEach(book => {
     Book.instances[book.isbn] = new Book(book)
   })
