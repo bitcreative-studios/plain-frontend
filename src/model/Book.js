@@ -88,4 +88,8 @@ Book.saveAll = function() {
 /**
  * Clear the book datastore
  */
-// TODO: Book.clearData
+Book.clearData = function() {
+  if (confirm("Do you really want to delete all your book data?")) {
+    localStorage.books = "{}"
+  }
+}
