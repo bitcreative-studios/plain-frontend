@@ -1,10 +1,16 @@
+/**
+ * @fileOverview The model class Book with attribute definitions
+ * and storage management methods
+ *
+ */
+
 import { randomInt, MAXIMUM_TEST_DATA } from "../utils"
 import sampleBooks from "../../sample-data/books.json"
 
 /**
- *
- * @param slots
+ * Constructor function for the class Book
  * @constructor
+ * @param {{isbn: string, title: string, year: number}} slots - Object creation slots
  */
 function Book(slots) {
   this.isbn = slots.isbn
@@ -102,6 +108,10 @@ Book.destroy = function(isbn) {
     console.log(`There is no book with ISBN ${isbn} in the database`)
   }
 }
+
+/*******************************************
+ *** Auxiliary methods for testing **********
+ ********************************************/
 
 /**
  * Generate some example book records as test data
