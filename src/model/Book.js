@@ -94,7 +94,7 @@ Book.update = function(slots) {
   if (book.year !== year) {
     book.year = year
   }
-  cosole.log(`Book ${slots.isbn} updated!`)
+  console.log(`Book ${slots.isbn} updated!`)
 }
 
 /**
