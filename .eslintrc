@@ -5,5 +5,10 @@
   },
   "env": {
     "browser": true
-  }
+  },
+  "globals": {
+    "Book": true,
+    "pl": true
+  },
+  "rules": { "dot-notation": "warn" }
 }
